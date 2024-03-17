@@ -1,0 +1,58 @@
+# Project: chapterfive
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o 5.5.o 5.6.o 5.8.o 5.9.o 5.10.o 5.12.o 5.13.o 5.14.o 5.18.o 5.23.o
+LINKOBJ  = main.o 5.5.o 5.6.o 5.8.o 5.9.o 5.10.o 5.12.o 5.13.o 5.14.o 5.18.o 5.23.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = chapterfive.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+5.5.o: 5.5.cpp
+	$(CPP) -c 5.5.cpp -o 5.5.o $(CXXFLAGS)
+
+5.6.o: 5.6.cpp
+	$(CPP) -c 5.6.cpp -o 5.6.o $(CXXFLAGS)
+
+5.8.o: 5.8.cpp
+	$(CPP) -c 5.8.cpp -o 5.8.o $(CXXFLAGS)
+
+5.9.o: 5.9.cpp
+	$(CPP) -c 5.9.cpp -o 5.9.o $(CXXFLAGS)
+
+5.10.o: 5.10.cpp
+	$(CPP) -c 5.10.cpp -o 5.10.o $(CXXFLAGS)
+
+5.12.o: 5.12.cpp
+	$(CPP) -c 5.12.cpp -o 5.12.o $(CXXFLAGS)
+
+5.13.o: 5.13.cpp
+	$(CPP) -c 5.13.cpp -o 5.13.o $(CXXFLAGS)
+
+5.14.o: 5.14.cpp
+	$(CPP) -c 5.14.cpp -o 5.14.o $(CXXFLAGS)
+
+5.18.o: 5.18.cpp
+	$(CPP) -c 5.18.cpp -o 5.18.o $(CXXFLAGS)
+
+5.23.o: 5.23.cpp
+	$(CPP) -c 5.23.cpp -o 5.23.o $(CXXFLAGS)
