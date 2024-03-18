@@ -44,3 +44,30 @@ int search(int array[],int key){
 	return -1;
 }
 */
+
+// sorting of the array
+void array_sort(){
+	int array[10] = {36,56,4,10,77,51,93,30,5,52}, i, j, temp;
+	cout<<"Unsorted array is: "<<endl;
+	
+	// dipslay of unsorted array
+	for(i = 0; i < 10; i++){
+		cout<<array[i]<<" ";
+	}
+	cout<<endl;
+	cout<<"Sorted array is: "<<endl;
+	// outer loop for the overall iterations and inner loop for the comparison
+	for(i = 0; i < 10; i++){
+		for(j = 0; j < 9 - i; j++){
+			if(array[j] > array[j + 1]){
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+		}
+	}	
+	// display of sorted array
+	for(i = 0; i < 10; i++){
+		cout<<array[i]<<" ";
+	}
+}
