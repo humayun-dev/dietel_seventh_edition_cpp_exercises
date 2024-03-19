@@ -1,9 +1,13 @@
+/*		Program: Practicing the linear search, bubble sort, vectors
+		Author: Muhammad Humayun Khan
+*/
+
 #include <iostream>
 #include <vector>		// for the vector concept
 
 using namespace::std;
 
-/*
+
 // implementation of the linear search
 int search(int [],int);		// function prototype
 
@@ -44,10 +48,10 @@ int search(int array[],int key){
 	}
 	return -1;
 }
-*/
+
 
 // sorting of the array
-/*
+
 void array_sort(){
 	int array[10] = {36,56,4,10,77,51,93,30,5,52}, i, j, temp;
 	cout<<"Unsorted array is: "<<endl;
@@ -73,7 +77,7 @@ void array_sort(){
 		cout<<array[i]<<" ";
 	}
 }
-*/
+
 
 // vectors in C++ having static number of values such as 5 only
 void vector_concept() {
