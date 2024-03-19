@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>		// for the vector concept
 
 using namespace::std;
 
@@ -46,6 +47,7 @@ int search(int array[],int key){
 */
 
 // sorting of the array
+/*
 void array_sort(){
 	int array[10] = {36,56,4,10,77,51,93,30,5,52}, i, j, temp;
 	cout<<"Unsorted array is: "<<endl;
@@ -71,3 +73,42 @@ void array_sort(){
 		cout<<array[i]<<" ";
 	}
 }
+*/
+
+// vectors in C++ having static number of values such as 5 only
+void vector_concept() {
+    vector<int> myVec;
+    int i;
+    // adding values to the vector using pushback()
+    for(i = 0; i < 5; i++){
+    	myVec.push_back(i);
+	}
+	// display of the vector elements
+    for (i = 0; i < myVec.size(); i++) {
+        cout<<myVec[i]<<endl;
+    }
+}
+
+// vectors in c++ having dynamic number of values
+void vector_dynamic(){
+	vector<int> vecDynamic;
+	int input;
+	cout<<"Please enter the integers to be entered in the vector (non-integer value to stop): ";
+	
+	// store input values into the vector
+	while(cin >> input){
+		vecDynamic.push_back(input);
+	}
+	
+	// display of the values
+	for(int i = 0; i < vecDynamic.size(); i++){
+		cout<<vecDynamic[i]<<" ";
+	}
+}
+
+
+
+
+
+
+

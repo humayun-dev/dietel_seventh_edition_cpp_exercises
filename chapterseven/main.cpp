@@ -5,6 +5,8 @@ using namespace::std;
 
 int main(int argc, char** argv) {
 	//linear_searching();
-	array_sort();
+	//array_sort();
+	//vector_concept();
+	vector_dynamic();
 	return 0;
 }
