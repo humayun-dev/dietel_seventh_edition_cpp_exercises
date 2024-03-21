@@ -11,11 +11,19 @@ int main(int argc, char** argv) {
 	//vector_dynamic();
 	
 	// task 7.10
-	sales_person();
+	//sales_person();
 	
+	// task 7.15
+	//duplicate_elimination();
 	
+	// task 7.17
+	//dice_rolling();
 	
+	// task 7.20
+	//reservation_system();
 	
+	// task 7.22
+	//sales_summary();
 	
 	
 	
