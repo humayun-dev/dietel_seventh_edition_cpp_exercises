@@ -25,6 +25,10 @@ int main(int argc, char** argv) {
 	// task 7.22
 	//sales_summary();
 	
+	// task 7.23
+	//turtle_movement();
+	
+	// task 7.24
 	
 	
 	

@@ -251,13 +251,107 @@ void duplicate_elimination(){
 	cout<<grandTotal<<endl;
 	}
 	
-/*	Program: 7.23
+/*	Program: 7.23 turtle graphics
 	Author: Muhamamd Humayun Khan
 */
+	const int size = 20;
+	void initial_grid(char grid[size][size], int);		// initial grid prototype
+	void print_grid(char grid[size][size],int);		// printing the grid
+	void move_object(int&, int&, char grid[][size], char);	// when object moves in the grid
+	void right_turn(int&);	// when object turns right
+	void left_turn(int&);	// when object turns left
+	void move_forward(int&, int&, int, char grid[][size], char);
+		
+	int turtle_movement() {
+	    const int size = 20;
+	    char grid[size][size];
+	    initial_grid(grid, size);
 	
+	    int xPos = 0, yPos = 0, orientation = 0; // Initial position and orientation
 	
+	    while (true) {
+	        print_grid(grid, size);
+	        cout<<"Please enter command (1 for space, 2 for asterisk, 3 for turn right, 4 for turn left, 9 to quit): ";
+	        int command;
+	        cin>>command;
 	
-	
-	
-	
-	
+	        switch(command){
+	            case 1:
+	                move_object(xPos, yPos, grid, ' ');
+	                break;
+	            case 2:
+	                move_object(xPos, yPos, grid, '*');
+	                break;
+	            case 3:
+	                right_turn(orientation);
+	                break;
+	            case 4:
+	                left_turn(orientation);
+	                break;
+	            case 9:
+	                cout<<"Final grid is: "<<endl;
+	                print_grid(grid, size);
+	                return 0;
+	            default:
+	                cout<<"Your selection is wrong."<<endl;
+	        }
+	        
+	        // Move forward after each command
+	        move_forward(xPos, yPos, orientation, grid, '*');
+	    }
+	}
+	// Initializes the grid with empty spaces.
+	void initial_grid(char grid[][20], int size){
+	    for(int i = 0; i < size; ++i){
+	        for (int j = 0; j < size; ++j){
+	            grid[i][j] = ' ';
+	        }
+	    }
+	}
+	// Prints the grid to the console
+	void print_grid(char grid[][20], int size){
+	    for(int i = 0; i < size; ++i){
+	        for(int j = 0; j < size; ++j){
+	            cout << grid[i][j] << ' ';
+	        }
+	        cout << endl;
+	    }
+	}
+	// Moves the turtle on the grid and places the specified character
+	void move_object(int& xPos, int& yPos, char grid[][20], char ch) {
+	    if (xPos >= 0 && xPos < 20 && yPos >= 0 && yPos < 20) {
+	        grid[yPos][xPos] = ch;
+	    } else {
+	        cout << "Invalid position" << endl;
+	    }
+	}
+	// Updates the turtle's orientation to turn right
+	void right_turn(int& orientation) {
+	    orientation = (orientation + 1) % 4;
+	}
+	// Updates the turtle's orientation to turn left
+	void left_turn(int& orientation) {
+	    orientation = (orientation + 3) % 4;
+	}
+	// Moves the turtle forward in the direction it's facing
+	void move_forward(int& xPos, int& yPos, int orientation, char grid[][20], char ch){
+	    switch (orientation) {
+	        case 0: // Move upward
+	            if (yPos > 0)
+	                --yPos;
+	            break;
+	        case 1: // Move to the right
+	            if (xPos < 19)
+	                ++xPos;
+	            break;
+	        case 2: // Move downward
+	            if (yPos < 19)
+	                ++yPos;
+	            break;
+	        case 3: // Move to the left
+	            if (xPos > 0)
+	                --xPos;
+	            break;
+	    }
+	    move_object(xPos, yPos, grid, ch);
+	}
