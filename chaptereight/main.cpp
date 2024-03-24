@@ -15,5 +15,7 @@ int main(int argc, char** argv) {
 	
 	//array_ptr();
 	
+	func_pointers();
+
 	return 0;
 }
