@@ -1,6 +1,8 @@
 /*	Program: Chapter 9 header file
 	Author: Muhammad Humayun Khan
 */
+#ifndef UTILITYFUNCTION
+#define UTILITYFUNCTION
 
 class testing{
 	private:
@@ -10,5 +12,7 @@ class testing{
 		testing(int);		// by default contructor
 		void addition();	// public member function
 };
+
+#endif
 
 
